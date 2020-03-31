@@ -9,7 +9,7 @@ $(GitVersion) - Gets the version from Git in the recommended format Major.Minor.
 <Package Name="OpenTap.Plugins.PnaPlugin" xmlns="http://opentap.io/schemas/package" InfoLink="" Version="0.1.0-alpha">
   <Description>This is my OpenTAP plugin package.</Description>
   <Files>
-    <File Path="Packages/OpenTap.Plugins.PnaPlugin/OpenTap.Plugins.PnaPlugin.dll">
+    <File Path="C:/Program Files/OpenTAP/Packages/0_Plugin/OpenTap.Plugins.PnaPlugin.dll">
     	<SetAssemblyInfo Attributes="Version"/>
     	<!--ObfuscateWithDotfuscator/-->
     </File>

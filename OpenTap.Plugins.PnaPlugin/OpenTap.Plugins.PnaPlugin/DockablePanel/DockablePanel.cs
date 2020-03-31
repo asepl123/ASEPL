@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using System.Windows.Controls;
 using Brushes = System.Windows.Media.Brushes;
 using Button = System.Windows.Controls.Button;
+using Label = System.Windows.Forms.Label;
+using System.Windows.Media;
 
 // This file shows how to implement a custom dockable panel. The panel can be enabled/disabled under 
 // the View menu choice in the TAP GUI. The panel can be configured to be either floating or docked.
@@ -18,155 +20,126 @@ namespace OpenTap.Plugins.PnaPlugin
     public class DockablePanel : ITapDockPanel
     {
         // Default panel dimensions
-        public double? DesiredWidth { get { return 200; } }
+        public double? DesiredWidth { get { return 400; } }
 
-        public double? DesiredHeight { get { return 200; } }
+        public double? DesiredHeight { get { return 400; } }
 
-        dockResultListener listener;
+        
 
         static TraceSource Log = OpenTap.Log.CreateSource("DockExample");
 
         // In this method the layout of the dockable panel is defined/setup. 
         // The ITapDockContext enables you to set the TestPlan, attach ResultListeners, 
         // configure Settings and start execution of a TestPlan. 
+
+        
         public FrameworkElement CreateElement(ITapDockContext context)
         {
-            var loadPlanBtn = new Button() { Content = "Load Plan" };
-            var runPlanBtn = new Button() { Content = "Run Plan" };
-            var stopPlanBtn = new Button() { Content = "Stop Plan" };
-            var statusTxt = new TextBlock
-            {
-                FontSize = 40,
-                HorizontalAlignment = System.Windows.HorizontalAlignment.Center
-            };
 
-            // Setup UI panel and add elements
-            var panel = new StackPanel() { Orientation = System.Windows.Controls.Orientation.Vertical };
+            // Create the Grid
 
-            panel.Children.Add(loadPlanBtn);
-            panel.Children.Add(runPlanBtn);
-            panel.Children.Add(stopPlanBtn);
-            panel.Children.Add(statusTxt);
+            Grid DynamicGrid = new Grid();
+            DynamicGrid.Width = 400;
+            DynamicGrid.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            DynamicGrid.VerticalAlignment = VerticalAlignment.Top;
+            DynamicGrid.ShowGridLines = true;
+            DynamicGrid.Background = new SolidColorBrush(Colors.LightSteelBlue);
 
-            TapThread planThread = null;
-            // Register event-handling methods for each of the buttons
-            runPlanBtn.Click += (s, e) => planThread = context.Run();
-            stopPlanBtn.Click += (s, e) => planThread?.Abort();
-            loadPlanBtn.Click += (s, e) =>
-            {
-                var fd = new OpenFileDialog();
-                fd.CheckFileExists = true;
-                var r = fd.ShowDialog();
-                try
-                {
-                    if (r == DialogResult.OK)
-                        context.Plan = TestPlan.Load(fd.FileName);
-                }
-                catch (InvalidOperationException ex)
-                {
-                    Log.Warning("{0}", ex.Message);
-                }
-            };
-            // Attach Result listener. runPlanBtn and statusTxt is updated according to status
-            context.ResultListeners.Add(listener = new dockResultListener(runPlanBtn, statusTxt));
+            DockPanel.SetDock(DynamicGrid, Dock.Left);
 
-            return panel;
+            // Create Columns
+
+            ColumnDefinition gridCol1 = new ColumnDefinition();
+            ColumnDefinition gridCol2 = new ColumnDefinition();
+
+            DynamicGrid.ColumnDefinitions.Add(gridCol1);
+            DynamicGrid.ColumnDefinitions.Add(gridCol2);
+
+            // Create Rows
+
+            RowDefinition gridRow1 = new RowDefinition() { Height = new GridLength(45) };
+            RowDefinition gridRow2 = new RowDefinition() { Height = new GridLength(45) };
+            RowDefinition gridRow3 = new RowDefinition() { Height = new GridLength(45) };
+
+            DynamicGrid.RowDefinitions.Add(gridRow1);
+            DynamicGrid.RowDefinitions.Add(gridRow2);
+            DynamicGrid.RowDefinitions.Add(gridRow3);
+
+            // Add first column header
+
+            TextBlock txtBlock1 = new TextBlock();
+            txtBlock1.Text = "Name of Project";
+            txtBlock1.FontSize = 14;
+            txtBlock1.FontWeight = FontWeights.Bold;
+            txtBlock1.Foreground = new SolidColorBrush(Colors.Green);
+            txtBlock1.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetRow(txtBlock1, 0);
+            Grid.SetColumn(txtBlock1, 0);
+
+            // Add second column header
+
+            TextBlock txtBlock2 = new TextBlock();
+            txtBlock2.Text = "Age";
+            txtBlock2.FontSize = 14;
+            txtBlock2.FontWeight = FontWeights.Bold;
+            txtBlock2.Foreground = new SolidColorBrush(Colors.Green);
+            txtBlock2.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetRow(txtBlock2, 1);
+            Grid.SetColumn(txtBlock2, 0);
+
+            // Add column headers to the Grid
+
+            DynamicGrid.Children.Add(txtBlock1);
+            DynamicGrid.Children.Add(txtBlock2);
+
+            // Create first Row
+
+            TextBlock authorText = new TextBlock();
+            authorText.Text = "Mahesh Chand";
+            authorText.FontSize = 12;
+            authorText.FontWeight = FontWeights.Bold;
+            authorText.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetRow(authorText, 0);
+            Grid.SetColumn(authorText, 1);
+
+            TextBlock ageText = new TextBlock();
+            ageText.Text = "33";
+            ageText.FontSize = 12;
+            ageText.FontWeight = FontWeights.Bold;
+            ageText.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetRow(ageText, 1);
+            Grid.SetColumn(ageText, 1);
+
+            // Add first row to Grid
+
+            DynamicGrid.Children.Add(authorText);
+            DynamicGrid.Children.Add(ageText);
+
+            // Create second row
+
+            authorText = new TextBlock();
+            authorText.Text = "Mike Gold";
+            authorText.FontSize = 12;
+            authorText.FontWeight = FontWeights.Bold;
+            Grid.SetRow(authorText, 2);
+            Grid.SetColumn(authorText, 0);
+
+            ageText = new TextBlock();
+            ageText.Text = "35";
+            ageText.FontSize = 12;
+            ageText.FontWeight = FontWeights.Bold;
+            Grid.SetRow(ageText, 2);
+            Grid.SetColumn(ageText, 1);
+
+            // Add second row to Grid
+
+            DynamicGrid.Children.Add(authorText);
+            DynamicGrid.Children.Add(ageText);
+
+            // Display grid into a Window
+            
+            return DynamicGrid;
         }
 
-        // Result listener used for dockable panel. Result listeners can be used in 
-        // a custom dockable panel. 
-        [System.ComponentModel.Browsable(false)]
-        class dockResultListener : ResultListener
-        {
-            Button btn;
-            TextBlock txt;
-
-            public dockResultListener(Button b, TextBlock txt)
-            {
-                btn = b;
-                this.txt = txt;
-                OpenTap.Log.RemoveSource(this.Log);
-            }
-            public override void OnTestPlanRunCompleted(TestPlanRun planRun, Stream logStream)
-            {
-                GuiHelper.GuiInvoke(() =>
-                {
-                    btn.IsEnabled = true;
-                    txt.Text = planRun.Verdict.ToString();
-                    txt.Foreground = Brushes.Gray;
-                    if (planRun.Verdict == Verdict.Pass)
-                        txt.Foreground = Brushes.Green;
-                    if (planRun.Verdict == Verdict.Fail)
-                        txt.Foreground = Brushes.Red;
-                });
-            }
-
-            public override void OnTestPlanRunStart(TestPlanRun planRun)
-            {
-                GuiHelper.GuiInvoke(() =>
-                {
-                    btn.IsEnabled = false;
-                    txt.Text = "";
-                });
-            }
-        }
-    }
-
-    // GuiHelper class for updating GUIs. It can be reused for custom UI components.
-    class GuiHelper
-    {
-        static Dispatcher getGuiDispatcher()
-        {
-            if (System.Windows.Application.Current != null) return System.Windows.Application.Current.Dispatcher;
-            return null;
-
-        }
-
-        /// <summary>
-        /// Invoke action in GUI thread. Optionally blocking.
-        /// </summary>
-        /// <param name="action"></param>
-        /// <param name="NonBlocking">use Invoke or BeginInvoke</param>
-        public static void GuiInvoke(Action action, Dispatcher dispatch = null, DispatcherPriority priority = DispatcherPriority.Normal)
-        {
-            try
-            {
-                dispatch = dispatch ?? getGuiDispatcher();
-                if (dispatch == null)
-                {
-                    try
-                    {
-                        action();
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // There is a chance that this might throw an InvalidOperationException ("The calling thread cannot access this object because a different thread owns it.") 
-                        // because we are not on the correct thread.
-                        // This can happen when the app is closing.
-                    }
-                }
-                else if (dispatch.CheckAccess())
-                {
-                    action();
-                }
-                else
-                {
-                    dispatch.Invoke(action, priority);
-                }
-            }
-            catch (System.Threading.Tasks.TaskCanceledException)
-            {
-                // If the dispatcher is stopped, this can happen.
-                // Should only happen upon exiting, so we need to check that it is because the dispatcher is shutting down.
-                if (dispatch != null && (dispatch.HasShutdownStarted || dispatch.HasShutdownFinished))
-                {
-                    // Do nothing. This is OK.
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
     }
 }
