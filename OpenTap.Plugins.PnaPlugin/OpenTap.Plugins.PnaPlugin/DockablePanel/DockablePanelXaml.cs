@@ -47,96 +47,18 @@ namespace OpenTap.Plugins.PnaPlugin
 
             DockPanel.SetDock(DynamicGrid, Dock.Left);
 
-            // Create Columns
+            try
+            {
+                Page page = System.Windows.Application.LoadComponent(new Uri("Resource/page.xaml", UriKind.Relative)) as Page;
+                if (page != null)
+                    DynamicGrid.Children.Add(page);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
 
-            ColumnDefinition gridCol1 = new ColumnDefinition();
-            ColumnDefinition gridCol2 = new ColumnDefinition();
-
-            DynamicGrid.ColumnDefinitions.Add(gridCol1);
-            DynamicGrid.ColumnDefinitions.Add(gridCol2);
-
-            // Create Rows
-
-            RowDefinition gridRow1 = new RowDefinition() { Height = new GridLength(45) };
-            RowDefinition gridRow2 = new RowDefinition() { Height = new GridLength(45) };
-            RowDefinition gridRow3 = new RowDefinition() { Height = new GridLength(45) };
-
-            DynamicGrid.RowDefinitions.Add(gridRow1);
-            DynamicGrid.RowDefinitions.Add(gridRow2);
-            DynamicGrid.RowDefinitions.Add(gridRow3);
-
-            // Add first column header
-
-            TextBlock txtBlock1 = new TextBlock();
-            txtBlock1.Text = "Name of Project";
-            txtBlock1.FontSize = 14;
-            txtBlock1.FontWeight = FontWeights.Bold;
-            txtBlock1.Foreground = new SolidColorBrush(Colors.Green);
-            txtBlock1.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetRow(txtBlock1, 0);
-            Grid.SetColumn(txtBlock1, 0);
-
-            // Add second column header
-
-            TextBlock txtBlock2 = new TextBlock();
-            txtBlock2.Text = "Age";
-            txtBlock2.FontSize = 14;
-            txtBlock2.FontWeight = FontWeights.Bold;
-            txtBlock2.Foreground = new SolidColorBrush(Colors.Green);
-            txtBlock2.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetRow(txtBlock2, 1);
-            Grid.SetColumn(txtBlock2, 0);
-
-            // Add column headers to the Grid
-
-            DynamicGrid.Children.Add(txtBlock1);
-            DynamicGrid.Children.Add(txtBlock2);
-
-            // Create first Row
-
-            TextBlock authorText = new TextBlock();
-            authorText.Text = "Mahesh Chand";
-            authorText.FontSize = 12;
-            authorText.FontWeight = FontWeights.Bold;
-            authorText.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetRow(authorText, 0);
-            Grid.SetColumn(authorText, 1);
-
-            TextBlock ageText = new TextBlock();
-            ageText.Text = "33";
-            ageText.FontSize = 12;
-            ageText.FontWeight = FontWeights.Bold;
-            ageText.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetRow(ageText, 1);
-            Grid.SetColumn(ageText, 1);
-
-            // Add first row to Grid
-
-            DynamicGrid.Children.Add(authorText);
-            DynamicGrid.Children.Add(ageText);
-
-            // Create second row
-
-            authorText = new TextBlock();
-            authorText.Text = "Mike Gold";
-            authorText.FontSize = 12;
-            authorText.FontWeight = FontWeights.Bold;
-            Grid.SetRow(authorText, 2);
-            Grid.SetColumn(authorText, 0);
-
-            ageText = new TextBlock();
-            ageText.Text = "35";
-            ageText.FontSize = 12;
-            ageText.FontWeight = FontWeights.Bold;
-            Grid.SetRow(ageText, 2);
-            Grid.SetColumn(ageText, 1);
-
-            // Add second row to Grid
-
-            DynamicGrid.Children.Add(authorText);
-            DynamicGrid.Children.Add(ageText);
-
-            // Display grid into a Window
+            
 
             return DynamicGrid;
         }
