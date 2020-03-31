@@ -15,16 +15,16 @@ using System.Windows.Media;
 
 namespace OpenTap.Plugins.PnaPlugin
 {
-    [Display("Dockable Panel")]
+    [Display("Dockable Panel XAML")]
     // A custom dockable panel has to implement ITapDockPanel. 
-    public class DockablePanel : ITapDockPanel
+    public class DockablePanelXaml : ITapDockPanel
     {
         // Default panel dimensions
         public double? DesiredWidth { get { return 400; } }
 
         public double? DesiredHeight { get { return 400; } }
 
-        
+
 
         static TraceSource Log = OpenTap.Log.CreateSource("DockExample");
 
@@ -32,7 +32,7 @@ namespace OpenTap.Plugins.PnaPlugin
         // The ITapDockContext enables you to set the TestPlan, attach ResultListeners, 
         // configure Settings and start execution of a TestPlan. 
 
-        
+
         public FrameworkElement CreateElement(ITapDockContext context)
         {
 
@@ -137,7 +137,7 @@ namespace OpenTap.Plugins.PnaPlugin
             DynamicGrid.Children.Add(ageText);
 
             // Display grid into a Window
-            
+
             return DynamicGrid;
         }
 
