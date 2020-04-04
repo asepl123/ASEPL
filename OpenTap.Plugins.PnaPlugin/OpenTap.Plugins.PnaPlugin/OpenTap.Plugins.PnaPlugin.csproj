@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,28 +63,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DockablePanel\DockablePanel.cs" />
+    <Compile Include="DockablePanel\DockablePanelUserControl.cs" />
     <Compile Include="DockablePanel\DockablePanelXaml.cs" />
     <Compile Include="Instrument\KeysightPna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resource1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
+    <Compile Include="Resources\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestStep\PnaScpi.cs" />
     <None Include="package.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <UsingTask TaskName="Keysight.OpenTap.Sdk.MSBuild.PackageTask" AssemblyFile="$(TAP_PATH)\Packages\SDK\Keysight.OpenTap.Sdk.MSBuild.dll" />
