@@ -9,15 +9,16 @@ using Brushes = System.Windows.Media.Brushes;
 using Button = System.Windows.Controls.Button;
 using Label = System.Windows.Forms.Label;
 using System.Windows.Media;
+using OpenTap.Plugins.PnaPlugin.MyUserControl;
 
 // This file shows how to implement a custom dockable panel. The panel can be enabled/disabled under 
 // the View menu choice in the TAP GUI. The panel can be configured to be either floating or docked.
 
-namespace OpenTap.Plugins.PnaPlugin
+namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
 {
-    [Display("Dockable Panel XAML")]
+    [Display("Dockable Panel User Control")]
     // A custom dockable panel has to implement ITapDockPanel. 
-    public class DockablePanelXaml : ITapDockPanel
+    public class DockablePanelUserControl : ITapDockPanel
     {
         // Default panel dimensions
         public double? DesiredWidth { get { return 400; } }
@@ -47,18 +48,10 @@ namespace OpenTap.Plugins.PnaPlugin
 
             DockPanel.SetDock(DynamicGrid, Dock.Left);
 
-            try
-            {
-                Page page = System.Windows.Application.LoadComponent(new Uri("page.xaml", UriKind.Relative)) as Page;
-                if (page != null)
-                    DynamicGrid.Children.Add(page);
-            }
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message);
-            }
+            UserControl1 userControl1 = new UserControl1();
+            DynamicGrid.Children.Add(userControl1);
 
-            
+            // Display grid into a Window
 
             return DynamicGrid;
         }

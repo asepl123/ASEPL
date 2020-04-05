@@ -13,7 +13,7 @@ using System.Windows.Media;
 // This file shows how to implement a custom dockable panel. The panel can be enabled/disabled under 
 // the View menu choice in the TAP GUI. The panel can be configured to be either floating or docked.
 
-namespace OpenTap.Plugins.PnaPlugin
+namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
 {
     [Display("Dockable Panel")]
     // A custom dockable panel has to implement ITapDockPanel. 
