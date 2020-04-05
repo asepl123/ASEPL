@@ -9,6 +9,7 @@ using Brushes = System.Windows.Media.Brushes;
 using Button = System.Windows.Controls.Button;
 using Label = System.Windows.Forms.Label;
 using System.Windows.Media;
+using OpenTap.Plugins.PnaPlugin.MyUserControl;
 
 // This file shows how to implement a custom dockable panel. The panel can be enabled/disabled under 
 // the View menu choice in the TAP GUI. The panel can be configured to be either floating or docked.

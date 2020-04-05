@@ -49,7 +49,7 @@ namespace OpenTap.Plugins.PnaPlugin
 
             try
             {
-                Page page = System.Windows.Application.LoadComponent(new Uri("Resource/page.xaml", UriKind.Relative)) as Page;
+                Page page = System.Windows.Application.LoadComponent(new Uri("page.xaml", UriKind.Relative)) as Page;
                 if (page != null)
                     DynamicGrid.Children.Add(page);
             }
