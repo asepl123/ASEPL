@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}</ProjectGuid>
+    <ProjectGuid>{FFA28CD7-306D-462A-8938-35B9977502FB}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>OpenTap.Plugins.PnaPlugin.MyUserControl</RootNamespace>
-    <AssemblyName>OpenTap.Plugins.PnaPlugin.MyUserControl</AssemblyName>
+    <RootNamespace>RegularTab</RootNamespace>
+    <AssemblyName>RegularTab</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\..\Program Files\OpenTAP\Packages\0_Plugin\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\..\Program Files\OpenTAP\Packages\0_Plugin\RegularTab\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -48,12 +48,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UserControl1.xaml">
+    <Page Include="RegularView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="RegularView.xaml.cs">
+      <DependentUpon>RegularView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -79,6 +79,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugger\Plugger.Contract.csproj">
+      <Project>{95b06d66-d1d6-4401-924e-95bf7ce4eca3}</Project>
+      <Name>Plugger.Contract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

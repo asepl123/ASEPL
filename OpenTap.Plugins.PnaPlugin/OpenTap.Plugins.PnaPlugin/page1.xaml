@@ -1,5 +1,5 @@
 <!-- Page1.xaml -->
-<Page x:Class="Testing_xClass_and_xCode.Page1"
+<Page x:Class="Testing_xClass_and_xCode.page1"
 
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 

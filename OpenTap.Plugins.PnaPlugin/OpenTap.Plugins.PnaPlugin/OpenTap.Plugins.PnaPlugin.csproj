@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="MyDockablePanel\DockablePanel.cs" />
     <Compile Include="MyDockablePanel\DockablePanelUserControl.cs" />
+    <Compile Include="MyDockablePanel\DockablePanelUserControl1.cs" />
     <Compile Include="MyDockablePanel\DockablePanelXaml.cs" />
     <Compile Include="MyInstrument\KeysightPna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,12 +72,16 @@
     <None Include="package.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="page.xaml">
+    <None Include="page1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeneralTab\GeneralTab.csproj">
+      <Project>{4954664d-9fe2-4083-8da1-018e5a2ebdaa}</Project>
+      <Name>GeneralTab</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OpenTap.Plugins.PnaPlugin.MyUserControl\OpenTap.Plugins.PnaPlugin.MyUserControl.csproj">
       <Project>{d7830ec6-4a1a-4c01-8e8e-3de55e1d2035}</Project>
       <Name>OpenTap.Plugins.PnaPlugin.MyUserControl</Name>

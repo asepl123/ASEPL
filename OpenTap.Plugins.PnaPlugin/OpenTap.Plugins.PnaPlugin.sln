@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTap.Plugins.PnaPlugin",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTap.Plugins.PnaPlugin.MyUserControl", "OpenTap.Plugins.PnaPlugin.MyUserControl\OpenTap.Plugins.PnaPlugin.MyUserControl.csproj", "{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugger.Contract", "Plugger\Plugger.Contract.csproj", "{95B06D66-D1D6-4401-924E-95BF7CE4ECA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralTab", "GeneralTab\GeneralTab.csproj", "{4954664D-9FE2-4083-8DA1-018E5A2EBDAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegularTab", "RegularTab\RegularTab.csproj", "{FFA28CD7-306D-462A-8938-35B9977502FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B06D66-D1D6-4401-924E-95BF7CE4ECA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B06D66-D1D6-4401-924E-95BF7CE4ECA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B06D66-D1D6-4401-924E-95BF7CE4ECA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B06D66-D1D6-4401-924E-95BF7CE4ECA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4954664D-9FE2-4083-8DA1-018E5A2EBDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4954664D-9FE2-4083-8DA1-018E5A2EBDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4954664D-9FE2-4083-8DA1-018E5A2EBDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4954664D-9FE2-4083-8DA1-018E5A2EBDAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA28CD7-306D-462A-8938-35B9977502FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA28CD7-306D-462A-8938-35B9977502FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA28CD7-306D-462A-8938-35B9977502FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA28CD7-306D-462A-8938-35B9977502FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
