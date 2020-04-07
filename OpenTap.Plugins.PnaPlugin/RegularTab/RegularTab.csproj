@@ -48,6 +48,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegularView1.xaml.cs">
+      <DependentUpon>RegularView1.xaml</DependentUpon>
+    </Compile>
     <Page Include="RegularView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -56,6 +59,10 @@
       <DependentUpon>RegularView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RegularView1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

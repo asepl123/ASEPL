@@ -31,14 +31,15 @@ namespace GeneralTab
         {
             try
             {
-                //Configure path of PlugBoard folder to access all calculate libraries 
-                //string plugName = ConfigurationSettings.AppSettings["Plugs"].ToString();
-                string plugName = @"C:\Program Files\OpenTAP\Packages\0_Plugin\";
+                //Configure path of folder to access all calculate libraries
+                //string plugName = @"C:\Program Files\OpenTAP\Packages\0_Plugin\";
+                string plugPath = Directory.GetCurrentDirectory();
+                string plugName = Path.Combine(Directory.GetCurrentDirectory(), "Packages", "0_Plugin");
                 TabItem buttonA = new TabItem();
                 int myHeight = 40;
                 buttonA.Header = "Welcome";
                 buttonA.Height = myHeight;
-                buttonA.Content = "You welcome :)";
+                buttonA.Content = "You welcome :)\n" + plugName;
                 tabPlugs.Items.Add(buttonA);
 
                 var connectors = Directory.GetDirectories(plugName);
