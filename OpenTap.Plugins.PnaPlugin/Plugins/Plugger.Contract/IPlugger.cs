@@ -2,8 +2,8 @@
 
 namespace Plugger.Contract
 {
-    public interface IPlugger
-    {
+	public interface IPlugger
+	{
         /// <summary>
         /// Name of plugger
         /// </summary>

@@ -1,32 +1,38 @@
 ﻿using Plugger.Contract;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-//using Plugger;
-
-namespace GeneralTab
+namespace OpenTap.Plugins.PnaPlugin.MainTab
 {
-    /// <summary>
-    /// Interaction logic for UserControl1.xaml
-    /// </summary>
-    public partial class GeneralView : UserControl
-    {
-        [Obsolete]
-        public GeneralView()
-        {
-            InitializeComponent();
+	/// <summary>
+	/// Interaction logic for MaintabView.xaml
+	/// </summary>
+	public partial class MaintabView : UserControl
+	{
+		public MaintabView()
+		{
+			InitializeComponent();
             LoadView();
-        }
+		}
 
         /// <summary>
         /// Load all IPlggers available in PlugBoard Folder
         /// </summary>
-        [Obsolete]
         public void LoadView()
         {
             try
@@ -34,7 +40,7 @@ namespace GeneralTab
                 //Configure path of folder to access all calculate libraries
                 //string plugName = @"C:\Program Files\OpenTAP\Packages\0_Plugin\";
                 string plugPath = Directory.GetCurrentDirectory();
-                string plugName = Path.Combine(Directory.GetCurrentDirectory(), "Packages", "0_Plugin");
+                string plugName = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Packages", "0_Plugin");
                 TabItem buttonA = new TabItem();
                 int myHeight = 40;
                 buttonA.Header = "Welcome";
@@ -63,7 +69,6 @@ namespace GeneralTab
             {
                 MessageBox.Show(ex.Message, "Internal Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
 
         private string GetPluggerDll(string connect)

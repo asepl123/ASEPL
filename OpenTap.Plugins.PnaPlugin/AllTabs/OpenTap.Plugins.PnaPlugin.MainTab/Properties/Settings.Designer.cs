@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RegularTab.Properties
+namespace OpenTap.Plugins.PnaPlugin.MainTab.Properties
 {
     
     

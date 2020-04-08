@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4954664D-9FE2-4083-8DA1-018E5A2EBDAA}</ProjectGuid>
+    <ProjectGuid>{4020CFB3-CDC9-4191-A2D1-8B672862166B}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>GeneralTab</RootNamespace>
-    <AssemblyName>GeneralTab</AssemblyName>
+    <RootNamespace>OpenTap.Plugins.PnaPlugin.GeneralTab</RootNamespace>
+    <AssemblyName>OpenTap.Plugins.PnaPlugin.GeneralTab</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\..\Program Files\OpenTAP\Packages\0_Plugin\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\..\..\Program Files\OpenTAP\Packages\0_Plugin\GeneralTab\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -48,16 +48,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="GeneralView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="GeneralView.xaml.cs">
-      <DependentUpon>GeneralView.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="GeneraltabView.xaml.cs">
+      <DependentUpon>GeneraltabView.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -81,8 +74,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Plugger\Plugger.Contract.csproj">
-      <Project>{95B06D66-D1D6-4401-924E-95BF7CE4ECA3}</Project>
+    <Page Include="GeneraltabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Plugins\Plugger.Contract\Plugger.Contract.csproj">
+      <Project>{a87ca611-4921-4cf5-82f4-778b95b92e57}</Project>
       <Name>Plugger.Contract</Name>
     </ProjectReference>
   </ItemGroup>

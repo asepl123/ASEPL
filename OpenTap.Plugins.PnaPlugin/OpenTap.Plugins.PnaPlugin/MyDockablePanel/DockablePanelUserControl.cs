@@ -17,7 +17,7 @@ using OpenTap.Plugins.PnaPlugin.MyUserControl;
 namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
 {
     [Display("Dockable Panel User Control")]
-    // A custom dockable panel has to implement ITapDockPanel. 
+    // A custom dockable panel has to implement ITapDockPanel.
     public class DockablePanelUserControl : ITapDockPanel
     {
         // Default panel dimensions
@@ -29,9 +29,9 @@ namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
 
         static TraceSource Log = OpenTap.Log.CreateSource("DockExample");
 
-        // In this method the layout of the dockable panel is defined/setup. 
-        // The ITapDockContext enables you to set the TestPlan, attach ResultListeners, 
-        // configure Settings and start execution of a TestPlan. 
+        // In this method the layout of the dockable panel is defined/setup.
+        // The ITapDockContext enables you to set the TestPlan, attach ResultListeners,
+        // configure Settings and start execution of a TestPlan.
 
 
         public FrameworkElement CreateElement(ITapDockContext context)

@@ -1,5 +1,4 @@
-﻿using Plugger.Contract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,21 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Plugger.Contract;
 
-namespace RegularTab
+namespace OpenTap.Plugins.PnaPlugin.GeneralTab
 {
 	/// <summary>
-	/// Interaction logic for RegularView1.xaml
+	/// Interaction logic for GeneraltabView.xaml
 	/// </summary>
-	public partial class RegularView1 : UserControl,IPlugger
+	public partial class GeneraltabView : UserControl,IPlugger
 	{
-		public RegularView1()
+		public GeneraltabView()
 		{
 			InitializeComponent();
 		}
 
-		public string PluggerName { get; set; } = "General Settings";
-
+		public string PluggerName { get; set; } = "General";
 		public UserControl GetPlugger() => this;
 	}
 }
