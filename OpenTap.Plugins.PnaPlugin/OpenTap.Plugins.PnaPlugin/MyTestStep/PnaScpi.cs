@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using OpenTap;
 using OpenTap.Plugins.PnaPlugin.MyInstrument;
 
+using OpenTap.Plugins.PnaPlugin.MyDockablePanel;
+
 
 namespace OpenTap.Plugins.PnaPlugin.MyTestStep
 {
@@ -118,6 +120,7 @@ namespace OpenTap.Plugins.PnaPlugin.MyTestStep
         public void WriteCode()
         {
             Log.Info("Ecal Started");
+            
         }
 
         private void ProcessResults()
