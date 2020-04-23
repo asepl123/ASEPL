@@ -65,17 +65,10 @@
     <Compile Include="MyDockablePanel\DockablePanel.cs" />
     <Compile Include="MyDockablePanel\DockablePanelUserControl.cs" />
     <Compile Include="MyDockablePanel\DockablePanelUserControl1.cs" />
-    <Compile Include="MyDockablePanel\DockablePanelXaml.cs" />
     <Compile Include="MyInstrument\KeysightPna.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyTestStep\PnaScpi.cs" />
     <None Include="package.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="page1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AllTabs\OpenTap.Plugins.PnaPlugin.MainTab\OpenTap.Plugins.PnaPlugin.MainTab.csproj">
