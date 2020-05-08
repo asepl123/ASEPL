@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTap.Plugins.PnaPlugin", "OpenTap.Plugins.PnaPlugin\OpenTap.Plugins.PnaPlugin.csproj", "{E9A58818-52F6-4E3A-ADE2-22041CF7626B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTap.Plugins.PnaPlugin.MyUserControl", "OpenTap.Plugins.PnaPlugin.MyUserControl\OpenTap.Plugins.PnaPlugin.MyUserControl.csproj", "{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AllTabs", "AllTabs", "{29F58122-88B2-4C76-860E-E0A31BCAC98E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTap.Plugins.PnaPlugin.MainTab", "AllTabs\OpenTap.Plugins.PnaPlugin.MainTab\OpenTap.Plugins.PnaPlugin.MainTab.csproj", "{DF0278B8-E5A4-4B4B-B16B-B92D718D3F9D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{76A79561-62F2-491A-B01B-11F59E30DC94}"
@@ -27,10 +23,6 @@ Global
 		{E9A58818-52F6-4E3A-ADE2-22041CF7626B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9A58818-52F6-4E3A-ADE2-22041CF7626B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9A58818-52F6-4E3A-ADE2-22041CF7626B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7830EC6-4A1A-4C01-8E8E-3DE55E1D2035}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF0278B8-E5A4-4B4B-B16B-B92D718D3F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF0278B8-E5A4-4B4B-B16B-B92D718D3F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0278B8-E5A4-4B4B-B16B-B92D718D3F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,9 +40,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DF0278B8-E5A4-4B4B-B16B-B92D718D3F9D} = {29F58122-88B2-4C76-860E-E0A31BCAC98E}
+		{DF0278B8-E5A4-4B4B-B16B-B92D718D3F9D} = {76A79561-62F2-491A-B01B-11F59E30DC94}
 		{A87CA611-4921-4CF5-82F4-778B95B92E57} = {76A79561-62F2-491A-B01B-11F59E30DC94}
-		{4020CFB3-CDC9-4191-A2D1-8B672862166B} = {29F58122-88B2-4C76-860E-E0A31BCAC98E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C00842C8-4016-411D-A0B8-36320A1C1973}

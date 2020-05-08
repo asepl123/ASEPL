@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Windows;
 using Keysight.OpenTap.Wpf;
-
-using OpenTap.Plugins.PnaPlugin.MainTab;
+using OpenTap.Plugins.PnaPlugin.GeneralTab;
 
 // This file shows how to implement a custom dockable panel. The panel can be enabled/disabled under 
 // the View menu choice in the TAP GUI. The panel can be configured to be either floating or docked.
 
 namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
 {
-    [Display("Dockable Panel User Control 1")]
+    [Display("All In One User Control")]
     // A custom dockable panel has to implement ITapDockPanel. 
-    public class DockablePanelUserControl1 : ITapDockPanel
+    public class AllInOneUserControl : ITapDockPanel
     {
         // Default panel dimensions
         public double? DesiredWidth { get { return 850; } }
@@ -27,7 +26,7 @@ namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
         [Obsolete]
         public FrameworkElement CreateElement(ITapDockContext context)
         {
-            MaintabView generalView = new MaintabView();
+            GeneraltabView generalView = new GeneraltabView();
 
             // Display UserControl "generalView" into a Window
 

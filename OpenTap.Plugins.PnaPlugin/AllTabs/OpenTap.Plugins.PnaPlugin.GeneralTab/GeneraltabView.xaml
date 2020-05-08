@@ -50,7 +50,7 @@
 			<!-- Tab Control -->
 			
 			<TabControl Height="220">
-				<TabItem Header="Channel 1" Height="22" VerticalAlignment="Top">
+				<TabItem Header="Channel 1" VerticalAlignment="Top">
 					<Grid Background="#FFE5E5E5">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto"/>
@@ -127,11 +127,85 @@
 					</Grid>
 					
 				</TabItem>
-				<TabItem Header="Channel 2">
+
+				<TabItem Header="Channel 2" VerticalAlignment="Top">
 					<Grid Background="#FFE5E5E5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="17"/>
+						</Grid.ColumnDefinitions>
+
+						<Grid HorizontalAlignment="Left" Height="170" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="Auto" Grid.Column="0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" Margin="10" TextWrapping="Wrap" Text="S Parameter" FontWeight="Bold" FontSize="14" VerticalAlignment="Top" Width="Auto" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" Margin="10" TextWrapping="Wrap" Text="S11" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="0"/>
+							<CheckBox Content="CheckBox2" HorizontalAlignment="Left" Height="20" Margin="10" VerticalAlignment="Top" Width="20" Grid.Row="1" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" Margin="10" TextWrapping="Wrap" Text="S12" VerticalAlignment="Top" Width="Auto" Grid.Row="2" Grid.Column="0"/>
+							<CheckBox Content="CheckBox2" HorizontalAlignment="Left" Height="20" Margin="10" VerticalAlignment="Top" Width="20" Grid.Row="2" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" Margin="10" TextWrapping="Wrap" Text="S21" VerticalAlignment="Top" Width="Auto" Grid.Row="3" Grid.Column="0"/>
+							<CheckBox Content="CheckBox2" HorizontalAlignment="Left" Height="20" Margin="10" VerticalAlignment="Top" Width="20" Grid.Row="3" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" Margin="10" TextWrapping="Wrap" Text="S22" VerticalAlignment="Top" Width="Auto" Grid.Row="4" Grid.Column="0"/>
+							<CheckBox Content="CheckBox2" HorizontalAlignment="Left" Height="20" Margin="10" VerticalAlignment="Top" Width="20" Grid.Row="4" Grid.Column="1"/>
+						</Grid>
+
+						<Grid HorizontalAlignment="Left" Height="170" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="Auto" Grid.Column="1">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" Margin="10" TextWrapping="Wrap" Text="Input Parameter" FontWeight="Bold" FontSize="12" VerticalAlignment="Top" Width="Auto" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" TextWrapping="Wrap" Text="Calculation Format" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="0"/>
+							<TextBox Text="" Padding="5" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Grid.Row="1" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" TextWrapping="Wrap" Text="Data Format" VerticalAlignment="Top" Width="Auto" Grid.Row="2" Grid.Column="0"/>
+							<TextBox Text="" Padding="5" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Grid.Row="2" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" TextWrapping="Wrap" Text="Start Sweep Frequency" VerticalAlignment="Top" Width="Auto" Grid.Row="3" Grid.Column="0"/>
+							<TextBox Text="" Padding="5" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Grid.Row="3" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" TextWrapping="Wrap" Text="Stop Sweep Frequency" VerticalAlignment="Top" Width="Auto" Grid.Row="4" Grid.Column="0"/>
+							<TextBox Text="" Padding="5" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Grid.Row="4" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" TextWrapping="Wrap" Text="Sweep Points" VerticalAlignment="Top" Width="Auto" Grid.Row="5" Grid.Column="0"/>
+							<TextBox Text="" Padding="5" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Grid.Row="5" Grid.Column="1"/>
+
+							<TextBlock HorizontalAlignment="Center" Height="Auto" TextWrapping="Wrap" Text="Sweep Type" VerticalAlignment="Top" Width="Auto" Grid.Row="6" Grid.Column="0"/>
+							<TextBox Text="" Padding="5" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" TextAlignment="Left" Grid.Row="6" Grid.Column="1"/>
+						</Grid>
+
+						<ScrollBar Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.824,0.781" Height="190" Width="5"/>
 
 					</Grid>
+
 				</TabItem>
+				
 			</TabControl>
 			<Button Content="Apply" HorizontalAlignment="Center" Height="25" Margin="5" Width="100"/>
 

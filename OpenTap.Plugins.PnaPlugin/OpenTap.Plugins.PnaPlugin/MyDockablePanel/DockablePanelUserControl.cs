@@ -9,7 +9,7 @@ using Brushes = System.Windows.Media.Brushes;
 using Button = System.Windows.Controls.Button;
 using Label = System.Windows.Forms.Label;
 using System.Windows.Media;
-using OpenTap.Plugins.PnaPlugin.MyUserControl;
+using OpenTap.Plugins.PnaPlugin.MainTab;
 
 // This file shows how to implement a custom dockable panel. The panel can be enabled/disabled under 
 // the View menu choice in the TAP GUI. The panel can be configured to be either floating or docked.
@@ -37,23 +37,11 @@ namespace OpenTap.Plugins.PnaPlugin.MyDockablePanel
         public FrameworkElement CreateElement(ITapDockContext context)
         {
 
-            // Create the Grid
+            MaintabView mainView = new MaintabView();
 
-            Grid DynamicGrid = new Grid();
-            DynamicGrid.Width = 400;
-            DynamicGrid.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
-            DynamicGrid.VerticalAlignment = VerticalAlignment.Top;
-            DynamicGrid.ShowGridLines = true;
-            DynamicGrid.Background = new SolidColorBrush(Colors.LightSteelBlue);
+            // Display UserControl "generalView" into a Window
 
-            DockPanel.SetDock(DynamicGrid, Dock.Left);
-
-            UserControl1 userControl1 = new UserControl1();
-            DynamicGrid.Children.Add(userControl1);
-
-            // Display grid into a Window
-
-            return DynamicGrid;
+            return mainView;
         }
 
     }
